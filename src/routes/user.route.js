@@ -10,7 +10,7 @@ import { registerUser, userUpdate } from '../schemas/index.schema.js';
 
 const router = Router();
 
-router.post('/register', validate(registerUser), register)
+router.post('/', validate(registerUser), register)
 router.get('/:id', findUser)
 router.patch('/:id', validate(userUpdate), updateUser)
 router.get('/', findAllUser)

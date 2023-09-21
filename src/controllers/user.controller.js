@@ -1,9 +1,12 @@
 import * as services from '../services/user.service.js';
+import { sendMail } from '../utils/email.util.js'
 //create a User
 export const register = async (req, res, next) => {        
  try {
 const data = req.body;
- const newUser = await services.CreateUser({ data });    
+console.log(data)
+ const newUser = await services.CreateUser(data);    
+ await sendMail(data.email)
 res.status(201).json({ 
     success: true, message: 'User created Successfully', data: newUser })
 } catch (error) {
