@@ -20,6 +20,14 @@
 - Healthcheck: `/api/healthcheck` 
     [ GET: Server Health Check ]
 
+ - `user: `
+    [ POST: create a new user]  `/api/user`
+    [ POST: Send an invite]  `/api/user/invite`
+    [ GET: get all users]  `/api/user`
+    [ GET: get a single user] `/api/user/<id>`
+    [ PUT: update or replace users] `/api/user/<id>`
+    [ DELETE: delete a user] `/api/user/<id>`
+
 ## License
 This project is licensed under the MIT License.
 

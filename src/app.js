@@ -16,7 +16,6 @@ app.use(
   })
 );
 
-
 app.use(express.urlencoded({extended: false}))
 app.use(express.json())
 
@@ -31,3 +30,4 @@ app.listen(port, async () => {
 		await connectDb();
 	});
 
+  export default app
