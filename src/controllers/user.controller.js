@@ -6,13 +6,21 @@ export const register = async (req, res, next) => {
 const data = req.body;
 console.log(data)
  const newUser = await services.CreateUser(data);    
- await sendMail(data.email)
-res.status(201).json({ 
-    success: true, message: 'User created Successfully', data: newUser })
+res.status(201).json({ success: true, message: 'User created Successfully', data: newUser })
 } catch (error) {
  next(error)
  }
     }
+
+export const mailer = async (req, res, next) => {
+    try {
+    const { email } = req.body
+    await sendMail(email)
+ res.status(201).json({ success: true, message: 'Mail Sent Successfully'})
+    } catch (error) {
+ next(error)        
+    }
+}
 
     //Get a Single by Id
     export const findUser = async (req, res, next) => {

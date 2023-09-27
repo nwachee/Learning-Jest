@@ -1,6 +1,7 @@
 import { Router } from 'express';
 import {
 register,
+mailer,
  findUser,
 updateUser,
 findAllUser,
@@ -11,6 +12,7 @@ import { registerUser, userUpdate } from '../schemas/index.schema.js';
 const router = Router();
 
 router.post('/', validate(registerUser), register)
+router.post('/invite', mailer)
 router.get('/:id', findUser)
 router.patch('/:id', validate(userUpdate), updateUser)
 router.get('/', findAllUser)
