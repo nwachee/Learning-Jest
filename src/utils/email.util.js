@@ -13,8 +13,8 @@ export const sendMail = async (email) => {
     let mailDetails = {
         from: process.env.EMAIL_USER,
         to: email,
-        subject: 'Test mail',
-        text: 'Official invitation to join the organization'
+        subject: 'Another Test mail',
+        text: 'K-way Nwanne m'
     };
      
     mailTransporter.sendMail(mailDetails, function(err, data) {

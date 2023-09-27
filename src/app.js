@@ -30,3 +30,4 @@ app.listen(port, async () => {
 		await connectDb();
 	});
 
+  export default app
